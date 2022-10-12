@@ -32,29 +32,19 @@ public class CalculatorController {
 
     @GetMapping("/minus")
     public String minus (@RequestParam double num1, @RequestParam double num2) {
-        double minusResult = num1 - num2;
-        return num1 + " - " + num2 + " = " + minusResult;
+
+        return num1 + " - " + num2 + " = " + calculatorService.minus(num1, num2);
     }
 
     @GetMapping("/multiply")
     public String multiply (@RequestParam double num1, @RequestParam double num2) {
-        double multiplyResult = num1 * num2;
-        return num1 + " * " + num2 + " = " + multiplyResult;
+        return num1 + " * " + num2 + " = " + calculatorService.multiply(num1, num2);
     }
 
     @GetMapping("/divide")
     public String divide (@RequestParam double num1, @RequestParam double num2) {
 
-////        if (num2 == 0) {
-////            return "на ноль делить нельзя";
-//        }
-//        else {
-//            double divideResult = num1 / num2;
-//
            return num1 + " / " + num2 + " = " + calculatorService.divide(num1, num2);
-//        }
-
-
 
     }
 
